@@ -66,21 +66,6 @@ Layout/TrailingEmptyLines:
   Exclude:
     - 'Gemfile'
 
-# Offense count: 1
-# Configuration parameters: IgnoredMethods.
-Metrics/CyclomaticComplexity:
-  Max: 9
-
-# Offense count: 1
-# Configuration parameters: CountComments, CountAsOne, ExcludedMethods, IgnoredMethods.
-Metrics/MethodLength:
-  Max: 13
-
-# Offense count: 1
-# Configuration parameters: IgnoredMethods.
-Metrics/PerceivedComplexity:
-  Max: 9
-
 # Offense count: 2
 # Configuration parameters: AllowedConstants.
 Style/Documentation:
@@ -149,9 +134,33 @@ Style/StringLiterals:
 Style/SymbolArray:
   EnforcedStyle: brackets
 
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: AutoCorrect, AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
-# URISchemes: http, https
+Metrics/BlockLength:
+  Exclude:
+    - 'db/seeds.rb'
+    - 'db/schema.rb'
+
 Layout/LineLength:
-  Max: 198
+  Exclude:
+    - 'db/seeds.rb'
+    - 'bin/bundle'
+
+Metrics/CyclomaticComplexity:
+  Exclude:
+    - 'bin/bundle'
+
+Metrics/PerceivedComplexity:
+  Exclude:
+    - 'bin/bundle'
+
+Metrics/AbcSize:
+  Exclude:
+    - 'db/migrate/*.rb'
+
+Metrics/MethodLength:
+  Exclude:
+    - 'db/migrate/*.rb'
+    - 'bin/bundle'
+
+Style/Documentation:
+  Exclude:
+    - 'db/migrate/*.rb'
